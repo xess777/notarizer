@@ -6,8 +6,8 @@
     <title>Nebulas Notarizer</title>
     <!-- CSS dependencies -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/bootstrap-4.0.0.min.css">
     <link rel="stylesheet" href="css/main.css" type="text/css">
-    <link rel="stylesheet" href="css/bootstrap-4.0.0.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
     <!--Header-->
@@ -39,23 +39,21 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <h2>New document</h2>
+                    <h2>Add document</h2>
                     <hr> </div>
             </div>
             <div class="row">
-                <div class="col-md-6 p-3">
+                <div class="col-md-8 p-3">
                     <form method="post" action="">
                         <h5>Document to certification</h5>
                         <div class="form-group my-3">
-                            <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                            <input type="file" class="form-control-file" id="certifiedFile">
                         </div>
-                        <button class="btn btn-primary my-2">Calculate Hash</button>
-
                         <h5>Document digest</h5>
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Disabled input" id="disabledTextInput" disabled="">
+                            <input type="text" class="form-control" placeholder="Disabled input" id="fileDigest" disabled="">
                         </div>
-                        <button type="submit" class="btn btn-primary my-2 disabled">Submit</button>
+                        <button type="submit" class="btn btn-primary my-2 disabled" disabled>Submit</button>
                     </form>
                 </div>
             </div>
@@ -81,8 +79,10 @@
         </div>
     </nav>
 
-    <script src="js/jquery-3.2.1.min.js" integrity="sha384-xBuQ/xzmlsLoJpyjoggmTEz8OWUFM0/RC5BsqQBDX2v5cMvDHcMakNTNrHIW2I5f" crossorigin="anonymous"></script>
-    <script src="js/popper-1.12.9.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="js/bootstrap-4.0.0.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/popper-1.12.9.min.js"></script>
+    <script src="js/bootstrap-4.0.0.min.js"></script>
+    <script src="js/sha256.min.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
