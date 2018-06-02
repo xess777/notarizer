@@ -44,7 +44,7 @@
             </div>
             <div class="row">
                 <div class="col-md-8 p-3">
-                    <form method="post" action="">
+                    <form>
                         <h5>Document to certification</h5>
                         <div class="form-group my-3">
                             <input type="file" class="form-control-file" id="certifiedFile">
@@ -53,8 +53,8 @@
                         <div class="form-group">
                             <input type="text" class="form-control" placeholder="Disabled input" id="fileDigest" disabled="">
                         </div>
-                        <button type="submit" class="btn btn-primary my-2 disabled" disabled>Submit</button>
                     </form>
+                    <button type="button" class="btn btn-primary my-2 disabled" disabled id="saveDigestBtn">Submit</button>
                 </div>
             </div>
         </div>
@@ -83,6 +83,7 @@
     <script src="js/popper-1.12.9.min.js"></script>
     <script src="js/bootstrap-4.0.0.min.js"></script>
     <script src="js/sha256.min.js"></script>
+    <script src="js/nebPay.min.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
