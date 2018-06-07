@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <!--Description-->
+    <div class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2>Proof of Existence</h2>
+                    <hr>
+                    <p>Nebulas Notarizer is a prototype notary and "Proof of Existence" DAPP. By submitting hashes of documents you can proof on a later date that you were privileged to certain information at a point in history.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/Description-->
+
+    <!--New document-->
+    <div class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2>Add document</h2>
+                    <hr> </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8 p-3">
+                    <form>
+                        <h5>Document to certification</h5>
+                        <div class="form-group my-3">
+                            <input type="file" class="form-control-file" id="certifiedFile">
+                        </div>
+                        <h5>Document digest</h5>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Disabled input" id="fileDigest" disabled="">
+                        </div>
+                    </form>
+                    <button type="button" class="btn btn-primary my-2 disabled" disabled id="saveDigestBtn">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/New document-->
+{% endblock %}

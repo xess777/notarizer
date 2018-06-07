@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Nebulas Notarizer</title>
+    <!-- CSS dependencies -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-4.0.0.min.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css')}}" type="text/css">
+</head>
+<body>
+    <!--Header-->
+    <div class="py-5 text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="display-3 text-capitalize">Nebulas Notarizer</h1>
+                    <p class="lead text-muted">Written forever.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Content-->
+    {% block content %}{% endblock %}
+    <!--/Content-->
+
+    <!--Footer-->
+    <nav class="navbar navbar-expand-md my-3 navbar-light bg-light">
+        <div class="container">
+            <div class="collapse navbar-collapse text-center justify-content-end" id="navbarLightSupportedContent">
+                <ul class="navbar-nav">
+                    <li class="nav-item mx-1">
+                        <a class="nav-link" href="#"><i class="fa d-inline fa-facebook-square"></i>&nbsp; share</a>
+                    </li>
+                    <li class="nav-item mx-1">
+                        <a class="nav-link" href="#"><i class="fa d-inline fa-twitter"></i>&nbsp; tweet</a>
+                    </li>
+                    <li class="nav-item mx-1">
+                        <a class="nav-link" href="#"><i class="fa d-inline fa-pinterest"></i>&nbsp; pin</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <script src="{{ url_for('static', filename='js/jquery-3.2.1.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/popper-1.12.9.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap-4.0.0.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/sha256.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/nebPay.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/main.js')}}"></script>
+</body>
+</html>
