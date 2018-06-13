@@ -1,11 +1,16 @@
 'use strict';
 
 var NotarizerContract = function () {
+    this.DIGEST_LEN = 64;
+
     LocalContractStorage.defineMapProperty(this, 'storage');
+    LocalContractStorage.defineMapProperty(this, 'digestIndexes');
+    LocalContractStorage.defineProperty(this, 'count');
 };
 
 NotarizerContract.prototype = {
     init: function () {
+        this.count = 0;
     },
 
     set: function (digest) {
@@ -16,6 +21,8 @@ NotarizerContract.prototype = {
 
         var data = this._prepareData();
         this.storage.set(digest, data);
+        this.digestIndexes.set(this.count, digest);
+        this.count +=1;
 
         return JSON.stringify(data);
     },
@@ -30,9 +37,24 @@ NotarizerContract.prototype = {
         return JSON.stringify(data);
     },
 
+    getLast: function (limit) {
+        var result = [];
+        var limit = parseInt(limit);
+
+        for(var i = this.count - 1; i >= 0; i--) {
+            var key = this.digestIndexes.get(i);
+            var data = this.storage.get(key);
+            result.push(data);
+        }
+
+        return JSON.stringify(result);
+    },
+
     _checkDigest: function(digest) {
         if (!digest) {
             throw new Error('No file digest before.');
+        } else if (digest.length != this.DIGEST_LEN) {
+            throw new Error('Invalid digest.');
         }
     },
 
