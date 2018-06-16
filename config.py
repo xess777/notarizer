@@ -1,6 +1,6 @@
 class Config:
     HOST = 'https://mainnet.nebulas.io'
-    ADDRESS = 'n1ucNaioM7FJ4GWW1XXyeLR4MY5FyyzYz9S'
+    ADDRESS = 'n1f5PfVeDuSxXPfnsUdXh29DiBgV2VF8S6C'
     GASPRICE = '1000000'
     GASLIMIT = '200000'
     CACHE_DIR = '__cache__'

@@ -19,7 +19,7 @@ NotarizerContract.prototype = {
             throw new Error('File digest already exist.');
         }
 
-        var data = this._prepareData();
+        var data = this._prepareData(digest);
         this.storage.set(digest, data);
         this.digestIndexes.set(this.count, digest);
         this.count +=1;
@@ -41,10 +41,12 @@ NotarizerContract.prototype = {
         var result = [];
         var limit = parseInt(limit);
 
-        for(var i = this.count - 1; i >= 0; i--) {
-            var key = this.digestIndexes.get(i);
-            var data = this.storage.get(key);
-            result.push(data);
+        if (this.count > 0) {
+            for (var i = this.count - 1; i >= 0; i--) {
+                var key = this.digestIndexes.get(i);
+                var data = this.storage.get(key);
+                result.push(data);
+            }
         }
 
         return JSON.stringify(result);
@@ -58,8 +60,9 @@ NotarizerContract.prototype = {
         }
     },
 
-    _prepareData: function () {
+    _prepareData: function (digest) {
         var data = {
+            'digest': digest,
             'txHash': Blockchain.transaction.hash,
             'from': Blockchain.transaction.from,
             'timestamp': Blockchain.transaction.timestamp,

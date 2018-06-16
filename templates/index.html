@@ -42,4 +42,38 @@
         </div>
     </div>
     <!--/New document-->
+
+    <!--Certifications-->
+    <div class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2>Last Certifications</h2>
+                    <hr class="mb-4"> </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 p-3">
+                    <table class="table table-hover table-striped table-bordered">
+                        <thead class="thead-inverse">
+                        <tr>
+                            <th scope="col">Document digest</th>
+                            <th scope="col">TxHash</th>
+                            <th scope="col">Timestamp</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for row in last_digests %}
+                        <tr>
+                            <td>{{ row.digest }}</td>
+                            <td>{{ row.txHash }}</td>
+                            <td>{{ row.timestamp }}</td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/Certifications-->
 {% endblock %}
