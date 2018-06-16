@@ -1,7 +1,7 @@
 var NebPay = require('nebpay');
 
 (function($) {
-    var dappAddress = 'n1f5PfVeDuSxXPfnsUdXh29DiBgV2VF8S6C';
+    var dappAddress = 'n1pk5D11G9cH74zcUb484p4etgZxHyGoZ1L';
     var serialNumber = null;
     var nebPay = new NebPay();
 

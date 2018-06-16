@@ -42,7 +42,7 @@ NotarizerContract.prototype = {
         var limit = parseInt(limit);
 
         if (this.count > 0) {
-            for (var i = this.count - 1; i >= 0; i--) {
+            for (var i = this.count - 1; i >= 0 && i >= this.count - limit; i--) {
                 var key = this.digestIndexes.get(i);
                 var data = this.storage.get(key);
                 result.push(data);
