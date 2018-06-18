@@ -8,3 +8,4 @@ __pycache__/
 # Other
 tmp/*
 __cache__
+docker-compose.override.yml
