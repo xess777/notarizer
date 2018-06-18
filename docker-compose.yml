@@ -1,0 +1,21 @@
+version: '2'
+
+services:
+  app:
+    restart: always
+    build: ./app
+    expose:
+      - "8000"
+    volumes:
+      - /home/flask/app/static
+    command: /usr/local/bin/gunicorn -w 2 -b :8000 notarizer
+
+  nginx:
+    restart: always
+    build: ./nginx
+    ports:
+      - "80:80"
+    volumes_from:
+      - app
+    depends_on:
+      - app

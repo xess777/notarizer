@@ -3,10 +3,10 @@ from flask import Flask, render_template
 from helpers import timestamp2str
 from neb import get_last_digests
 
-app = Flask(__name__)
+application = Flask(__name__)
 
 
-@app.route('/')
+@application.route('/')
 def index():
     last_digests = get_last_digests()
     for item in last_digests:
@@ -20,4 +20,4 @@ def index():
 
 
 if __name__ == '__main__':
-    app.run()
+    application.run(host='0.0.0.0')
