@@ -1,0 +1,16 @@
+version: '2'
+
+services:
+  nginx:
+    ports:
+      - "8001:80"
+    environment:
+      VIRTUAL_HOST: notarizer.neb.tools
+      VIRTUAL_PORT: 8001
+      LETSENCRYPT_HOST: notarizer.neb.tools
+      LETSENCRYPT_EMAIL: webmaster@notarizer.neb.tools
+
+networks:
+  default:
+    external:
+      name: nginx-proxy
