@@ -16,6 +16,7 @@ def get_last_digests():
         'args': '["5"]',
         'function': 'getLast',
     }
+
     try:
         response = api.call(
             from_addr=Config.ADDRESS,
@@ -34,5 +35,40 @@ def get_last_digests():
             if isinstance(result, str):
                 result = json.loads(result)
                 cache.set(cache_key, result)
+
+    return result
+
+
+def get_digest(digest):
+    api = Api(host=Config.HOST)
+    contract = {
+        'args': '["{}"]'.format(digest),
+        'function': 'get',
+    }
+
+    try:
+        response = api.call(
+            from_addr=Config.ADDRESS,
+            to_addr=Config.ADDRESS,
+            value='0',
+            nonce=0,
+            gasprice=Config.GASPRICE,
+            gaslimit=Config.GASLIMIT,
+            contract=contract)
+    except RequestException:
+        success = False
+        result = 'Network error'
+    else:
+        result = response.json().get('result', {}).get('result', '{}')
+        success = 'Error' not in result
+        if success:
+            result = json.loads(result)
+            if isinstance(result, str):
+                result = json.loads(result)
+
+    result = {
+        'success': success,
+        'result': result,
+    }
 
     return result

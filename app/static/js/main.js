@@ -77,4 +77,25 @@ var NebPay = require('nebpay');
 
         serialNumber = nebPay.call(dappAddress, 0, 'set', args, options);
     });
+
+    $('#searchBtn').on('click', function () {
+        var digest = $('#checkedDigest').val();
+        if (digest) {
+            $.ajax({
+                method: 'POST',
+                url: 'check_digest',
+                data: {digest: digest},
+            }).done(function (response) {
+                var el = $('.search-result').empty().show();
+                var result = '';
+                if (response.success) {
+                    result = 'Digest exist. <a target="_blank" href="https://explorer.nebulas.io/#/tx/' + response.result.txHash + '">See transaction</a>';
+                } else {
+                    result = response.result;
+                }
+                result = '<p>Result: ' + result + '</p>';
+                el.append(result);
+            });
+        }
+    });
 }(jQuery));

@@ -31,7 +31,7 @@
                     </div>
                     <h5>Document digest</h5>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Disabled input" id="fileDigest" disabled="">
+                        <input type="text" class="form-control" id="fileDigest" disabled="">
                     </div>
                 </form>
                 <button type="button" class="btn btn-primary my-2 disabled" disabled id="saveDigestBtn">Submit</button>
@@ -52,6 +52,31 @@ or use
         <!--/QR code-->
     </div>
     <!--/New document-->
+
+    <!--Search-->
+    <div class="container py-3">
+        <div class="row">
+            <div class="col-12">
+                <h2>Check digest</h2>
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8">
+                <form>
+                    <h5>Document digest</h5>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="checkedDigest">
+                    </div>
+                </form>
+                <button type="button" class="btn btn-primary my-2" id="searchBtn">Search</button>
+            </div>
+            <!--Search result-->
+            <div class="col-md-8 py-3 search-result" style="display: none">
+            </div>
+        </div>
+    </div>
+    <!--/Search-->
 
     <!--Certifications-->
     <div class="container py-3">

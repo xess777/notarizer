@@ -1,7 +1,7 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, jsonify
 
 from helpers import timestamp2str
-from neb import get_last_digests
+from neb import get_last_digests, get_digest
 
 application = Flask(__name__)
 
@@ -17,6 +17,20 @@ def index():
     }
 
     return render_template('index.html', **context)
+
+
+@application.route('/check_digest', methods=['POST'])
+def check_digest():
+    digest = request.form.get('digest')
+    if digest:
+        result = get_digest(digest)
+    else:
+        result = {
+            'success': False,
+            'result': 'Digest is empty',
+        }
+
+    return jsonify(result)
 
 
 if __name__ == '__main__':
