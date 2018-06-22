@@ -13,7 +13,7 @@ h1 {
 }
 
 h2 {
-    color: #007bff;
+    color: #7892B6;
     font-size: 1.5rem;
     font-weight: 500;
 }
@@ -23,7 +23,7 @@ canvas {
 }
 
 header {
-    background-color: #e9ecef;
+    background-color: #7892B6;
     padding: 50px;
 }
 
@@ -36,5 +36,5 @@ footer {
 }
 
 .navbar  {
-  background-color: #e9ecef;
+  background-color: #7892B6;
 }
