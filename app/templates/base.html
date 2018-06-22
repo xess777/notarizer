@@ -10,38 +10,38 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css')}}" type="text/css">
 </head>
 <body>
-    <!--Header-->
-    <div class="py-5 text-center">
+    <header>
         <div class="container">
-            <div class="row">
+            <div class="text-center">
                 <div class="col-12">
                     <h1 class="display-3 text-capitalize">Nebulas Notarizer</h1>
                     <p class="lead text-muted">Written forever.</p>
                 </div>
             </div>
         </div>
-    </div>
+    </header>
 
-    <!--Content-->
-    {% block content %}{% endblock %}
-    <!--/Content-->
+    <main role="main">
+        {% block content %}{% endblock %}
+    </main>
 
-    <!--Footer-->
-    <nav class="navbar navbar-expand-md my-3 navbar-light bg-light">
-        <div class="container">
-            <div class="collapse navbar-collapse text-center justify-content-end" id="navbarLightSupportedContent">
-                <ul class="navbar-nav">
-                    <li class="nav-item mx-1">
-                        <a class="nav-link" href="mailto:master@fordina.com"><i class="fa d-inline fa-envelope"></i>
- For questions, email master@fordina.com</a>
-                    </li>
-                    <li class="nav-item mx-1">
-                        <a class="nav-link" href="https://t.me/xess777"><i class="fa d-inline fa-telegram"></i> Telegram</a>
-                    </li>
-                </ul>
+    <footer>
+        <nav class="navbar navbar-expand-md my-3 navbar-light">
+            <div class="container">
+                <div class="collapse navbar-collapse text-center justify-content-end" id="navbarLightSupportedContent">
+                    <ul class="navbar-nav">
+                        <li class="nav-item mx-1">
+                            <a class="nav-link" href="mailto:master@fordina.com"><i class="fa d-inline fa-envelope"></i>
+     For questions, email master@fordina.com</a>
+                        </li>
+                        <li class="nav-item mx-1">
+                            <a class="nav-link" href="https://t.me/xess777"><i class="fa d-inline fa-telegram"></i> Telegram</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </footer>
 
     <script src="{{ url_for('static', filename='js/jquery-3.2.1.min.js')}}"></script>
     <script src="{{ url_for('static', filename='js/popper-1.12.9.min.js')}}"></script>
