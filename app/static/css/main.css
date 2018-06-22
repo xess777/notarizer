@@ -23,7 +23,7 @@ canvas {
 }
 
 header {
-    background-color: #7892B6;
+    background: #7892B6 url(/static/images/bg.png) repeat;
     padding: 50px;
 }
 
@@ -36,5 +36,5 @@ footer {
 }
 
 .navbar  {
-  background-color: #7892B6;
+  background: #7892B6 url(/static/images/bg.png) repeat;
 }
