@@ -69,6 +69,9 @@ var NebPay = require('nebpay');
                 showQRCode: true,
                 container: createQRContainer(),
             },
+            extension: {
+                openExtension: !(typeof(webExtensionWallet) === "undefined"),
+            },
             listener: saveDigestListener,
         }
 
