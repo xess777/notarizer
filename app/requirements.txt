@@ -29,7 +29,7 @@ protobuf==3.5.2.post1
 ptyprocess==0.5.2
 pycryptodome==3.6.1
 pycurl==7.43.0.1
-Pygments==2.2.0
+Pygments==2.7.4
 pyscrypt==1.6.2
 pysha3==1.0.2
 PyYAML==3.12
